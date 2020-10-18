@@ -25,7 +25,7 @@ void generate_vector(CassSession* session, size_t vector_id, size_t vector_lengt
     
     std::cout << query.str() << std::endl;
     
-    CassStatement* statement = cass_statement_new(query.str().c_str(), 0); // the 2nd argument (zero) is be explained in section “Prepared Statements”
+    CassStatement* statement = cass_statement_new(query.str().c_str(), 0);
     cass_statement_set_consistency(statement, CASS_CONSISTENCY_QUORUM);
 
     CassFuture* result_future = cass_session_execute(session, statement);

@@ -7,9 +7,9 @@
 void get_vector(CassSession* session, size_t vector_id, const char *table) {
     std::stringstream query;
     
-    query << "SELECT * FROM " << table << " WHERE id=" << vector_id << " ORDER BY coord ALLOW FILTERING";
+    query << "SELECT * FROM " << table << " WHERE id=" << vector_id;
     
-    CassStatement* statement = cass_statement_new(query.str().c_str(), 0); // the 2nd argument (zero) is be explained in section “Prepared Statements”
+    CassStatement* statement = cass_statement_new(query.str().c_str(), 0);
     cass_statement_set_consistency(statement, CASS_CONSISTENCY_QUORUM);
 
     CassFuture* result_future = cass_session_execute(session, statement);
