@@ -35,7 +35,7 @@ By uruchomić instancje używamy komend (w 4 osobnych terminalach):
 
 ### Layout danych
 
-Wektor w bazie danych jest przechowywany jako zbiór wierszy o danym unikatowym dla danego wektora id.
+Wektor w bazie danych jest przechowywany jako zbiór wierszy o jednakowym, unikatowym dla danego wektora id.
 
 Wiersze w bazie składają się z:
 * `id` - wektora
