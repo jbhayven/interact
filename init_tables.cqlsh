@@ -1,0 +1,11 @@
+CREATE KEYSPACE IF NOT EXISTS zpp WITH REPLICATION = {
+    'class' : 'SimpleStrategy',
+    'replication_factor' : 3
+};
+
+CREATE TABLE zpp.vectors (
+   id int,
+   coord int,
+   value double,
+   PRIMARY KEY (id, coord)
+) WITH CLUSTERING ORDER BY (coord ASC);
