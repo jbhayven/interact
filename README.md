@@ -35,14 +35,13 @@ By uruchomić instancje używamy komend (w 4 osobnych terminalach):
 
 ### Layout danych
 
-Wektor w bazie danych jest przechowywany jako zbiór wieszy o danym unikatowym id.
+Wektor w bazie danych jest przechowywany jako zbiór wierszy o danym unikatowym dla danego wektora id.
 
-Wiesze w bazie składają się z:
-* `id` - wectora
-* `coord` - numeru współrzędnej wektora
+Wiersze w bazie składają się z:
+* `id` - wektora
+* `coord` - numeru współrzędnej wektora (ze zbioru 0..długość wektora-1)
 * `value` - wartości danej współrzędnej
 * `PRIMARY KEY` jest parą `(id, coord)`
 
-Naszym kluczem klastrującym jest kolumna `coord`.
-
 Naszym kluczem partycji jest kolumna `id`.
+Naszym kluczem klastrującym jest kolumna `coord`.
