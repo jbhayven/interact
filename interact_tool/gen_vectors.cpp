@@ -7,7 +7,7 @@
 #include <random>
 
 double get_rand() {
-    return ((double)rand()/(double)RAND_MAX);
+    return ((double)rand() / (double)RAND_MAX);
 }
 
 void generate_vector(CassSession* session, size_t vector_id, size_t vector_length, const char *table) {
@@ -17,7 +17,6 @@ void generate_vector(CassSession* session, size_t vector_id, size_t vector_lengt
     
     query << "BEGIN BATCH " << std::endl;
     for (size_t i = 0; i < vector_length; i++) {
-      double random_number = get_rand();
       query << "INSERT INTO " << table << " " << " (id, coord, value) VALUES (" 
             << vector_id << ", " << i << ", " << get_rand() << ");" << std::endl;
     }
