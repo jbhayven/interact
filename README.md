@@ -1,12 +1,12 @@
 # interact
 
-Przygotowaliśmy klaster składający się z 4 instancji, oraz programy do zapisywanie / odczytywanie wektorów z bazy. Instancej uruchamiane są w kontenerach, każda ze swoim ip. Ip z zakresu 172.19.0.0/16. Zalecane ustawienie:
+Przygotowaliśmy klaster składający się z 4 instancji, oraz programy do zapisywania / odczytywania wektorów z bazy. Instancej uruchamiane są w kontenerach, każda ze swoim IP. IP z zakresu 172.19.0.0/16. Zalecane ustawienie:
 - node1 172.19.0.2
 - node2 172.19.0.3
 - node3 172.19.0.4
 - node4 172.19.0.5
 
-Wszystkie skrypty zakładają taką konfigurację ip.
+Wszystkie skrypty zakładają taką konfigurację IP.
 
 ## Instrukcja użycia:
 
