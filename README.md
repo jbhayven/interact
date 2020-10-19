@@ -30,3 +30,19 @@ By uruchomić instancje używamy komend (w 4 osobnych terminalach):
 - cqlsh: `./bin/cqlsh [Scylla host (e.g. 172.19.0.2)] [Scylla port (e.g. 9042)]`
 - jmx proxy: `./scripts/scylla-jmx -jp [port to listen on (e.g. 9043)] -p [Scylla REST API port (e.g. 10000)] -a [Scylla host (e.g. 172.19.0.2)]`
 - nodetool (wymaga uruchomionego jmx-proxy): `./bin/nodetool -h [ip jmx proxy listens on (e.g. 127.0.0.1)] -p [port jmx proxy listens on (e.g. 9043)] [command (e.g. status)]`
+
+## Rozwiązanie
+
+### Layout danych
+
+Wektor w bazie danych jest przechowywany jako zbiór wieszy o danym unikatowym id.
+
+Wiesze w bazie składają się z:
+* `id` - wectora
+* `coord` - numeru współrzędnej wektora
+* `value` - wartości danej współrzędnej
+* `PRIMARY KEY` jest parą `(id, coord)`
+
+Naszym kluczem klastrującym jest kolumna `coord`.
+
+Naszym kluczem partycji jest kolumna `id`.
