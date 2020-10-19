@@ -1,6 +1,7 @@
 # interact
 
 Przygotowaliśmy klaster składający się z 4 instancji, oraz programy do zapisywania / odczytywania wektorów z bazy. Instancej uruchamiane są w kontenerach, każda ze swoim IP. IP z zakresu 172.19.0.0/16. Zalecane ustawienie:
+
 - node1 172.19.0.2
 - node2 172.19.0.3
 - node3 172.19.0.4
@@ -18,6 +19,7 @@ Wszystkie skrypty zakładają taką konfigurację IP.
 
 ### Uruchamianie Scylli
 By uruchomić instancje używamy komend (w 4 osobnych terminalach):
+
 - `./run_scylla.sh node1 172.19.0.2 172.19.0.2`
 - `./run_scylla.sh node2 172.19.0.3 172.19.0.2`
 - `./run_scylla.sh node3 172.19.0.4 172.19.0.2`
@@ -38,6 +40,7 @@ By uruchomić instancje używamy komend (w 4 osobnych terminalach):
 Wektor w bazie danych jest przechowywany jako zbiór wierszy o jednakowym, unikatowym dla danego wektora id.
 
 Wiersze w bazie składają się z:
+
 * `id` - wektora
 * `coord` - numeru współrzędnej wektora (ze zbioru 0..długość wektora-1)
 * `value` - wartości danej współrzędnej
